@@ -1,0 +1,22 @@
+diff --git a/ofxparse/ofxparse.py b/ofxparse/ofxparse.py
+index 4e3ba67..b3dfdc1 100644
+--- a/ofxparse/ofxparse.py
++++ b/ofxparse/ofxparse.py
+@@ -46,7 +46,7 @@ def soup_maker(fh):
+     skip_headers(fh)
+     try:
+         from bs4 import BeautifulSoup
+-        soup = BeautifulSoup(fh, "xml")
++        soup = BeautifulSoup(fh, "html.parser")
+         for tag in soup.findAll():
+             tag.name = tag.name.lower()
+     except ImportError:
+@@ -293,7 +293,7 @@ class Signon:
+             ret += "\t\t\t</FI>\r\n"
+         if self.intu_bid is not None:
+             ret += "\t\t\t<INTU.BID>" + self.intu_bid + "\r\n"
+-        ret += "\t\t</SONRS>\r\n" 
++        ret += "\t\t</SONRS>\r\n"
+         ret += "\t</SIGNONMSGSRSV1>\r\n"
+         return ret
+ 

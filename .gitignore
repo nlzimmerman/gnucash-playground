@@ -1,3 +1,7 @@
+# Don't put your private financial data onto github!
+*.[oOqQ][fF][xX]
+*.gnucash
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
